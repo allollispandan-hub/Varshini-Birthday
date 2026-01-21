@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday, Varshini!</title>
+  <style>
+    :root{
+      --bg1:#fff6f9;
+      --bg2:#fff0ff;
+      --accent:#ff6b9a;
+      --accent2:#ffd166;
+      --text:#2b2b2b;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 10% 10%, var(--bg2), transparent),
+                  radial-gradient(800px 400px at 90% 90%, var(--bg1), transparent),
+                  linear-gradient(180deg,#fefefe 0%, #fff7fb 100%);
+      color:var(--text);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .card{
+      width:min(920px, 96%);
+      max-width:920px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.85));
+      border-radius:18px;
+      box-shadow: 0 20px 40px rgba(20,20,40,0.12);
+      overflow:hidden;
+      position:relative;
+      padding:36px;
+    }
+
+    header{
+      display:flex;
+      gap:18px;
+      align-items:center;
+    }
+    .cake {
+      width:120px;
+      height:120px;
+      border-radius:14px;
+      background: linear-gradient(180deg,#ffecd5,#ffd1b3);
+      position:relative;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+      flex:0 0 120px;
+      display:grid;
+      place-items:center;
+    }
+    .cake::before{
+      content:"";
+      width:84px;height:28px;border-radius:6px;background:#fff;
+      position:absolute;top:44px;left:50%;transform:translateX(-50%);
+      box-shadow: inset 0 -6px 12px rgba(0,0,0,0.03);
+    }
+    .candle{
+      position:absolute;top:16px;left:50%;transform:translateX(-50%);
+      width:8px;height:28px;border-radius:4px;background:#ff7aa2;
+      display:flex;align-items:flex-start;justify-content:center;
+    }
+    .flame{
+      width:12px;height:12px;border-radius:50%;
+      background: radial-gradient(circle at 35% 30%, #fff7a6, #ffb74d 40%, #ff6b6b 70%);
+      margin-top:-6px;
+      box-shadow: 0 0 10px rgba(255,120,80,0.6);
+      animation: flicker 1s infinite;
+    }
+    @keyframes flicker{
+      0% { transform:translateY(0) scale(1); opacity:1 }
+      50% { transform:translateY(-2px) scale(0.96); opacity:0.9 }
+      100% { transform:translateY(0) scale(1); opacity:1 }
+    }
+
+    .title{
+      font-size: clamp(20px, 3.8vw, 34px);
+      line-height:1.05;
+      font-weight:700;
+    }
+    .subtitle{
+      color: #6c6c7a;
+      margin-top:6px;
+      font-size:14px;
+    }
+
+    .top-photo img {
+      width: 280px;
+      display: block;
+      margin: 0 auto;
+      border-radius: 14px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      animation: slideIn 2s ease-out, zoomInOut 4s infinite ease-in-out;
+    }
+    
+    @keyframes slideIn {
+        0% {transform: translateY(-80px); opacity: 0;}
+        100% {transform: translateY(0); opacity: 1;}
+    }
+
+    @keyframes zoomInOut {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.08); }
+    }
+
+
+    /* Keyframes for zoom + fade */
+    @keyframes zoomFade {
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .message{
+      margin-top:18px;
+      padding:22px;
+      border-radius:12px;
+      background: linear-gradient(90deg, rgba(255,255,255,0.6), rgba(255,247,250,0.6));
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.6);
+      display:flex;
+      gap:20px;
+      align-items:center;
+    }
+
+    .balloons{
+      width:130px; height:180px; position:relative;
+    }
+    .balloon{
+      position:absolute;
+      width:70px;height:90px;border-radius:60% 60% 50% 50%;
+      display:inline-block;
+      left:50%;
+      transform-origin:center bottom;
+      animation: float 4s ease-in-out infinite;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+    }
+    .balloon:nth-child(1){ background:linear-gradient(180deg,#ff8bb2,#ff6b9a); left:10%; animation-delay:0s;}
+    .balloon:nth-child(2){ background:linear-gradient(180deg,#ffd8a6,#ffb86b); left:30%; transform:translateX(-50%); animation-delay:0.6s;}
+    .balloon:nth-child(3){ background:linear-gradient(180deg,#a7f3d0,#7ce0b2); left:60%; animation-delay:1.2s;}
+
+    .balloon::after{
+      content:""; position:absolute; left:50%; transform:translateX(-50%); bottom:-28px;
+      width:2px; height:28px; background:linear-gradient(#ad9fbf,#6b5278); border-radius:2px;
+    }
+
+    @keyframes float{
+      0% { transform:translateY(0) rotate(-3deg) }
+      50% { transform:translateY(-12px) rotate(4deg) }
+      100% { transform:translateY(0) rotate(-3deg) }
+    }
+
+    .typewriter{
+      font-family: "Georgia", serif;
+      font-size:18px;
+      color:#2a2a2a;
+      max-width:520px;
+      white-space:pre-wrap;
+      line-height:1.5;
+    }
+
+    .controls{
+      margin-top:18px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    .btn{
+      padding:10px 14px;
+      border-radius:10px;
+      border:0;
+      cursor:pointer;
+      font-weight:600;
+      box-shadow: 0 6px 14px rgba(35,22,70,0.06);
+    }
+    .btn--accent{ background:linear-gradient(90deg,var(--accent),#ff8fb3); color:white; }
+    .btn--ghost{ background:transparent; border:1px solid rgba(0,0,0,0.06); color:var(--text) }
+
+    /* Confetti pieces */
+    .confetti {
+      position:absolute; inset:0; pointer-events:none; overflow:hidden;
+    }
+    .confetti i{
+      position:absolute; display:block; width:10px; height:14px;
+      transform-origin:center;
+      opacity:0.95;
+      animation: drop linear infinite;
+    }
+    @keyframes drop{
+      0%{ transform: translateY(-10vh) rotate(0deg) scale(1); opacity:1 }
+      100%{ transform: translateY(120vh) rotate(720deg) scale(0.9); opacity:0.95 }
+    }
+
+    footer{
+      margin-top:18px;
+      color:#7b7b88;
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+    }
+
+    /* small screens */
+    @media (max-width:640px){
+      .message{flex-direction:column; align-items:flex-start}
+      .balloons{width:100%; height:120px}
+      .cake{width:96px;height:96px;flex:0 0 96px}
+    }
+
+    /* ===== FIREWORKS ===== */
+    .fireworks {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }
+
+    .firework {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        animation: explode 1.3s ease-out infinite;
+        box-shadow: 0 0 10px #ff0040, 0 0 15px #ff8000, 0 0 15px #ffff00,
+                      0 0 15px #00ff00, 0 0 15px #00c8ff, 0 0 15px #8000ff;
+    }
+
+    @keyframes explode {
+        0% { transform: scale(0.2); opacity: 1; }
+        50% { transform: scale(1.6); opacity: 1; }
+        100% { transform: scale(0); opacity: 0; }
+    }
+
+    /* Random placement */
+    .firework:nth-child(1) { top: 20%; left: 30%; animation-delay: 0s; }
+    .firework:nth-child(2) { top: 50%; left: 70%; animation-delay: 0.3s; }
+    .firework:nth-child(3) { top: 40%; left: 20%; animation-delay: 0.6s; }
+    .firework:nth-child(4) { top: 70%; left: 50%; animation-delay: 1s; }
+    .firework:nth-child(5) { top: 25%; left: 80%; animation-delay: 1.3s; }
+
+    /* ===== FLOATING BALLOONS ===== */
+    .balloons {
+        position: fixed;
+        bottom: -150px;
+        width: 100%;
+        pointer-events: none;
+    }
+    .balloon {
+        width: 60px;
+        height: 80px;
+        border-radius: 50% 50% 45% 45%;
+        position: absolute;
+        animation: rise 9s linear infinite;
+    }
+    .balloon:before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -15px;
+        width: 2px;
+        height: 20px;
+        background: black;
+    }
+
+    @keyframes rise {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(-1100px); opacity: 0.4; }
+    }
+
+    .balloon:nth-child(1) { left: 15%; background: #ff4d4d; animation-delay: 0s; }
+    .balloon:nth-child(2) { left: 35%; background: #ffa31a; animation-delay: 1s; }
+    .balloon:nth-child(3) { left: 55%; background: #33cc33; animation-delay: 2s; }
+    .balloon:nth-child(4) { left: 75%; background: #0099ff; animation-delay: 1.5s; }
+    .balloon:nth-child(5) { left: 90%; background: #cc33ff; animation-delay: 0.5s; }
+
+  </style>
+</head>
+<body>
+  <div class="card" role="main" aria-labelledby="card-title">
+    <div class="confetti" id="confetti"></div>
+
+    <header>
+      <div class="cake" aria-hidden="true">
+        <div class="candle" aria-hidden="true">
+          <div class="flame" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div>
+        <div id="card-title" class="title">Happy Birthday, <span style="color:var(--accent);">Varshini</span> 🎉</div>
+        <div class="subtitle">A little celebration made just for you — filled with wishes, smiles and good vibes.</div>
+      </div>
+    </header>
+
+    <div class="message" aria-live="polite">
+      <div class="balloons" aria-hidden="true">
+        <span class="balloon" style="top:10%;"></span>
+        <span class="balloon" style="top:30%;"></span>
+        <span class="balloon" style="top:55%;"></span>
+      </div>
+
+      <div>
+        <div id="typed" class="typewriter"></div>
+
+        <div class="controls" style="justify-content:flex-start;">
+          <button class="btn btn--accent" id="playBtn" aria-pressed="false">Play 🎶</button>
+          <button class="btn btn--ghost" id="surpriseBtn">Surprise Balloon 🎈</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div>Made with ❤️ — for Varshini</div>
+      <div style="font-size:12px;color:#a09fb1;">Open this file in any modern browser</div>
+    </footer>
+  </div>
+
+  <!-- TOP PHOTO AREA -->
+    <div class="top-photo">
+      <img src="image.jpg" alt="Birthday Photo">
+    </div>
+
+  <script>
+    // ---------- Typewriter message ----------
+    const messageLines = [
+      "Dear Best Friend!!💚❤️. Wishing you a day filled with love, laughter, and all your favorite things. May this year bring you beautiful memories and every success you dream of. You are truly amazing — keep shining✨. Sometimes I still wonder… How did you come into my life so suddenly? And how did you change me completely —from the old me into the happiest me?😇💭. The way you talk to me💙😍. The way you make me smile for no reason 🤠😁. The way you make me laugh even at midnight🤣. The way you stay in my thoughts every day—with or without conversation❤️✨. I know I came into your life a little late,that's why you loved someone else… But it's okay — I just want you to be happy with the people you love. The way you remember every friendship song. I've ever listened to🎶. The way you make me a little angry sometimes😅. Everything about you feels special. I love you so much as a friend💚. Once again… 🎉Happy Birthday, Varshini!🎂✨"
+    ];
+
+    const typedEl = document.getElementById('typed');
+    async function typeMessage(lines, el){
+      el.textContent = "";
+      for(const line of lines){
+        await typeLine(line + "\\n", el);
+        await wait(500);
+      }
+    }
+    function typeLine(text, el){
+      return new Promise(resolve=>{
+        let i=0;
+        const speed = 50;
+        const interval = setInterval(()=>{
+          el.textContent += text[i++];
+          if(i>=text.length){ clearInterval(interval); resolve(); }
+        }, speed);
+      });
+    }
+    function wait(ms){ return new Promise(r=>setTimeout(r, ms)); }
+
+    // Kick off typing after small delay
+    setTimeout(()=> typeMessage(messageLines, typedEl), 600);
+
+    // ---------- Confetti ----------
+    const confettiContainer = document.getElementById('confetti');
+    const colors = ['#ff6b9a','#ffd166','#7ce0b2','#9ad0ff','#d6b3ff','#ffb5c7'];
+
+    function makeConfettiPiece(i){
+      const el = document.createElement('i');
+      el.style.left = Math.random()*100 + 'vw';
+      el.style.top  = (-10 - Math.random()*10) + 'vh';
+      el.style.width = (8 + Math.random()*10) + 'px';
+      el.style.height = (10 + Math.random()*12) + 'px';
+      el.style.background = colors[Math.floor(Math.random()*colors.length)];
+      el.style.transform = 'rotate(' + (Math.random()*360) + 'deg)';
+      el.style.animationDuration = (3 + Math.random()*3) + 's';
+      el.style.animationDelay = (Math.random()*2) + 's';
+      confettiContainer.appendChild(el);
+      // remove after animation to keep DOM light
+      setTimeout(()=> el.remove(), 9000);
+    }
+
+    // spawn initial confetti
+    for(let i=0;i<28;i++) makeConfettiPiece(i);
+    // occasional new bursts
+    setInterval(()=> {
+      for(let i=0;i<8;i++) makeConfettiPiece(i);
+    }, 4000);
+
+    // ---------- Simple celebratory sound (WebAudio) ----------
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    function playHappyBeep(){
+      const notes = [523.25, 659.25, 783.99, 1046.5]; // C5, E5, G5, C6
+      let t = audioCtx.currentTime;
+      notes.forEach((f, i) => {
+        const o = audioCtx.createOscillator();
+        const g = audioCtx.createGain();
+        o.type = 'sine';
+        o.frequency.value = f;
+        g.gain.value = 0.0025; // gentle volume
+        o.connect(g); g.connect(audioCtx.destination);
+        o.start(t + i*0.12);
+        o.stop(t + i*0.12 + 0.18);
+      });
+    }
+
+    // ---------- Button handlers ----------
+    document.getElementById('playBtn').addEventListener('click', ()=>{
+      // resume context on user gesture if suspended
+      if(audioCtx.state === 'suspended') audioCtx.resume();
+      playHappyBeep();
+      // small confetti burst
+      for(let i=0;i<16;i++) makeConfettiPiece(i);
+    });
+
+    // Surprise balloon: quick floating balloon across the screen
+    document.getElementById('surpriseBtn').addEventListener('click', ()=>{
+      const b = document.createElement('div');
+      b.className = 'balloon';
+      b.style.width = '96px'; b.style.height = '120px';
+      b.style.left = '-10%';
+      b.style.top = (20 + Math.random()*40) + '%';
+      b.style.background = colors[Math.floor(Math.random()*colors.length)];
+      b.style.transition = 'transform 1.8s ease-out, left 1.8s linear';
+      document.querySelector('.card').appendChild(b);
+      // slide across
+      requestAnimationFrame(()=> {
+        b.style.transform = 'translateX(110vw) rotate(540deg)';
+        b.style.left = '110%';
+      });
+      setTimeout(()=> b.remove(), 2200);
+      // tiny sound
+      if(audioCtx.state === 'suspended') audioCtx.resume();
+      const o = audioCtx.createOscillator(), g = audioCtx.createGain();
+      o.type='triangle'; o.frequency.value = 880; g.gain.value=0.0015;
+      o.connect(g); g.connect(audioCtx.destination);
+      o.start(); o.stop(audioCtx.currentTime + 0.12);
+    });
+
+    // Accessibility: focus outlines for keyboard users
+    document.body.addEventListener('keyup', (e)=>{
+      if(e.key === 'Tab') document.body.classList.add('show-focus');
+    });
+
+  </script>
+</body>
+</html>
